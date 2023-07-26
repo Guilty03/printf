@@ -1,6 +1,6 @@
 #include "main.h"
 
-/************************* PRINT UNSIGNED NUMBER ***************************/
+/************************* PRINT UNSIGNED NUMBER *************************/
 /**
  * print_unsigned - Prints an unsigned number
  * @types: List a of arguments
@@ -21,6 +21,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	if (num == 0)
 		buffer[i--] = '0';
+
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
@@ -48,6 +49,7 @@ int print_unsigned(va_list types, char buffer[],
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
+
 	int i = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
@@ -55,7 +57,7 @@ int print_octal(va_list types, char buffer[],
 	UNUSED(width);
 
 	num = convert_size_unsgnd(num, size);
-	
+
 	if (num == 0)
 		buffer[i--] = '0';
 
